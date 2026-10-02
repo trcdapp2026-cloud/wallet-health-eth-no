@@ -122,7 +122,7 @@ export default function Home() {
     setNotice("");
 
     try {
-      const accounts = (await provider.request({ method: "eth_accounts" })) as string[];
+      const accounts = (await provider.request({ method: "eth_requestAccounts" })) as string[];
       if (!accounts?.length) throw new Error("Connect your wallet before checking.");
       await switchToBnb(provider);
 
